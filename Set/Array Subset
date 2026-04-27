@@ -1,0 +1,33 @@
+//Given two arrays a[] and b[], your task is to determine whether b[] is a subset of a[].
+
+import java.util.*;
+
+class Solution {
+    
+    public static boolean isSubset(int a[], int b[]) {
+        
+        // Convert array a to HashSet
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : a) {
+            set.add(num);
+        }
+
+        // Check if all elements of b are in set
+        for (int num : b) {
+            if (!set.contains(num)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        
+        int a[] = {1, 2, 3, 4, 5};
+        int b[] = {1, 2, 3};
+
+        boolean res = isSubset(a, b);
+        System.out.println(res);
+    }
+}
