@@ -1,0 +1,25 @@
+//Given two integer arrays a[] and b[], you have to find the intersection of the two arrays. Intersection of two arrays is said to be elements that are common in both the //arrays. The intersection should not have duplicate elements and the result should contain items in any order.
+
+
+class Solution {
+    public ArrayList<Integer> intersect(int[] a, int[] b) {
+        // code here
+        Set<Integer> s1 = new HashSet<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        
+        for(int num1 : a){
+            s1.add(num1);
+        }
+        
+        for(int num2 : b){
+            if(s1.contains(num2)){
+                res.add(num2);
+                s1.remove(num2);
+            }
+        }
+        
+        Collections.sort(res);
+        return res;
+        
+        }
+}
