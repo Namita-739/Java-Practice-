@@ -1,0 +1,29 @@
+//You are given two arrays a[] and b[], return the Union of both the arrays in any order.
+
+//The Union of two arrays is a collection of all distinct elements present in either of the arrays. If an element appears more than once in one or both arrays, it should be included only once in the result.
+
+//Note: Elements of a[] and b[] are not necessarily distinct.
+//Note that, You can return the Union in any order but the driver code will print the result in sorted order only.
+
+
+
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        // code here
+        Set<Integer> set1 = new TreeSet<>();
+        Set<Integer> set2 = new TreeSet<>();
+        
+        for(int num1 : a){
+            set1.add(num1);
+        }
+        
+         for(int num2 : b){
+            set2.add(num2);
+        }
+        
+        set1.addAll(set2);
+        
+        ArrayList<Integer> list = new ArrayList<>(set1);
+        return list;
+    }
+}
