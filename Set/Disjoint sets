@@ -1,0 +1,19 @@
+//Given two arrays a[] and b[], check if they are disjoint, i.e., there is no element common between both the arrays. Return true if if they are disjoint, otherwise, false.
+
+
+class Solution {
+    public boolean areDisjoint(int[] a, int[] b) {
+        // code here
+        
+        Set<Integer> set = new HashSet<>();
+        for(int num :a){
+            set.add(num);
+        }
+        
+        for(int num1 : b){
+            if(set.contains(num1))
+            return false;
+        }
+        return true;
+    }
+}
