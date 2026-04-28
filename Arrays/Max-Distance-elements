@@ -1,0 +1,22 @@
+//Given an array arr[], the task is to find the maximum distance between two occurrences of an element. If no element has two occurrences, then return 0.
+
+
+
+class Solution {
+    public int maxDistance(int[] arr) {
+        // Code here
+        ArrayList<Integer> temp = new ArrayList<>();
+        int l = arr.length;
+        for(int i =0 ; i<l ; i++){
+            for(int j =i+1 ; j<l ; j++){
+                if(arr[i]==arr[j])
+                temp.add(j-i);
+            }
+        }
+        if (temp.isEmpty()) {
+    return 0;
+}
+        int max = Collections.max(temp);
+        return max;
+    }
+}
